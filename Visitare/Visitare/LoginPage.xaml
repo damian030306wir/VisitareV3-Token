@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="#FDDA8A"
+             x:Class="Visitare.LoginPage">
+
+    <NavigationPage.TitleView>
+        <Label Text="Logowanie" TextColor="White" FontSize="Title" Margin="20,0"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Padding="40,80,40,0">
+            <Entry x:Name="login" Placeholder="Login" FontSize="20" PlaceholderColor="Gray"
+                   WidthRequest="300" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="password" Placeholder="Hasło" FontSize="20" IsPassword="True" PlaceholderColor="Gray" 
+                   WidthRequest="300" HorizontalTextAlignment="Center"/>
+            <Button Text="Zaloguj" CornerRadius="23" BackgroundColor="#439299" Margin="15" FontAttributes="Bold"
+                    Clicked="OnLog" TextColor="Black" />
+            <Button Text="Zaloguj z Google" CornerRadius="23" BackgroundColor="#439299" Margin="15" FontAttributes="Bold"
+                    Clicked="OnGoogleClicked" TextColor="Black"/>
+            <Button Text="Rejestracja" CornerRadius="23" BackgroundColor="#439299" Margin="15" FontAttributes="Bold"
+                    Clicked="Register" TextColor="Black"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

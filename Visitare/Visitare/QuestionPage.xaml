@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Visitare.QuestionPage">
+
+    <StackLayout>
+        <Entry x:Name="zagadkaEntry" Placeholder="Zagadka/pytanie do obiektu:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry x:Name="odpowiedzEntry1" Placeholder="Oczekiwana odpowiedź 1:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry x:Name="odpowiedzEntry2" Placeholder="Oczekiwana odpowiedź 2:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry x:Name="odpowiedzEntry3" Placeholder="Oczekiwana odpowiedź 3:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry x:Name="odpowiedzEntry4" Placeholder="Oczekiwana odpowiedź 4:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+        <Entry Keyboard= "Numeric" x:Name="odpowiedzPrawidlowa" Placeholder="Prawidlowa odpowiedz(0 to odpowiedz 1 itd.)" FontSize="Small"/>
+
+
+        <Button Text="Wciśnij aby rozpocząć quiz" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                Margin="0,50" Clicked="Button_Clicked" CornerRadius="25" TextColor="Black"/>
+
+        <StackLayout>
+            <Label Text="{Binding Question1}" TextColor="Black" Margin="10,0"/>
+        </StackLayout>
+
+        <ListView ItemsSource="{Binding Answers}" ItemTapped="ListView_ItemTapped"  Margin="10,0">
+            
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

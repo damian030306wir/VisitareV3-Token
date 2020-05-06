@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Visitare.RoutesPage"
+             BackgroundColor="#FDDA8A">
+    <NavigationPage.TitleView>
+        <Label Text="Trasy" TextColor="White" FontSize="Title" Margin="10,0"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="SearchRoutes" TextChanged="MethodSearchRoutes" HeightRequest="50"></SearchBar>
+            <ListView x:Name="routesList"
+                HorizontalOptions="Center"  
+                VerticalOptions="Center"
+                ItemTapped="OnTapped"
+                SelectionMode="None"
+                ItemsSource="{Binding Routes}"
+                SeparatorColor="#90B320">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}"
+                                   TextColor="Black"
+                                   HorizontalTextAlignment="Center"
+                                   FontAttributes="Bold" 
+                                   FontSize="20"
+                                   Margin="20,10,20,10"/>
+                                    <Label Text="{Binding Description}"
+                                   TextColor="Black"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontAttributes="Italic" 
+                                   FontSize="10"
+                                   Margin="10"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

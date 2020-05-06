@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Visitare;assembly=Visitare"
+             mc:Ignorable="d"
+             BackgroundColor="#FDDA8A"
+             x:Class="Visitare.MainPage">
+    <NavigationPage.TitleView>
+        <Label Text="Strona Główna" TextColor="White" FontSize="Title" Margin="10,0"/>
+    </NavigationPage.TitleView>
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="5">
+            <ImageButton Source="blankProfile.png" CornerRadius="25" HeightRequest="50" WidthRequest="50" 
+                     Aspect="Fill" Clicked="OnProfileClicked" />
+            <Entry Placeholder="Szukaj" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="20"/>
+            <Button Text="Wyloguj" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="End"
+                Clicked="OnLogOut" CornerRadius="18" TextColor="Black"/>
+        </StackLayout>
+        <StackLayout HeightRequest="450">
+            <local:CustomMap x:Name="customMap" Margin="2" IsShowingUser="true">
+                
+            </local:CustomMap>     
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="5">
+            <Button Text="Wyczyść" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="End"
+                Clicked="OnClearClicked" CornerRadius="25" TextColor="Black"/>
+            <Button Text="Kreator" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
+                Clicked="OnCreatorClicked" CornerRadius="25" TextColor="Black"/>
+            <Button Text="Trasy" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
+                Clicked="OnRoutesClicked" CornerRadius="25" TextColor="Black"/>
+        </StackLayout>
+    </StackLayout>
+    
+    
+</ContentPage>
